@@ -1,0 +1,6 @@
+Rolle’i teoreem ; Kui lõigus [a, b] pideva ja vahemikus (a, b) diferentseeruva funktsiooni f korral f(a) = f(b), siis leidub selline punkt c ∈ (a, b), nii et f'(c) = 0.
+Fermat’ teoreem ; Kui vahemikus (a, b) diferentseeruval funktsioonil f on olemas maksimaalne või minimaalne väärtus punktis c ∈ (a, b), siis f'(c) = 0.
+Lagrange’i keskväärtusteoreem ; Kui funktsioon f on pidev lõigus [a, b] ja diferentseeruv vahemikus (a, b), siis leidub selline punkt c ∈ (a, b), nii et (f(b) − f(a))/(b − a) = f'(c).
+Piirväärtuse ühesus ; Vaadeldavas protsessis saab funktsioonil olla ainult üks piirväärtus.
+Teoreem vahepealsetest väärtustest ; Kui funktsioon f on pidev lõigus [a, b], siis f(x) väärtus võib omada iga väärtust arvude f(a) ja f(b) vahel. Täpsemalt, kui f(a) ≤ y0 ≤ f(b), siis leidub argument x0 ∈ [a, b], et kehtib võrdus f(x0) = y0.
+Kronecker-Capelli teoreem ; Lineaarvõrrandisüsteem kujul Ax = b, on lahenduv (s.t omab vähemalt ühte lahendit) siis ja ainult siis, kui süsteemi maatriksi A astak r(A) võrdub laiendatud maatriksi L = (A | b) astakuga r(L). Teisiti öeldes, lineaarvõrrandisüsteem on lahenduv parajasti siis, kui r(A) = r(L).

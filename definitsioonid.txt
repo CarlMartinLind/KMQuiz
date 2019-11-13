@@ -1,0 +1,9 @@
+miinoriks ; Ruutmaatriksi A elemendile aij vastavaks __________ nimetatakse determinanti Mij , mis saadakse, kui maatriksi A determinandis jätta välja elementi aij läbiv rida ja veerg.
+ühikmaatriksiks ; Ruutmaatriksit E nimetatakse (n-järku) __________, kui tema peadiagonaali elemendid võrduvad ühega ja kõik ülejäänud elemendid võrduvad nulliga.
+astakuks ; Maatriksi A __________ nimetatakse selle maatriksi nullist erinevate miinorite kõrgeimat järku. Tähistatakse rank(A) või r(A).
+graafikuks ; Funktsiooni f __________ nimetatakse xy-tasandi punktide hulka G(f) = {(x, y)| y = f(x), x ∈ X}.
+ümbruseks ; Olgu mingi punkt a ∈ R ja δ > 0. Punkti a __________ nimetatakse vahemikku (a − δ, a + δ).
+tõkestatuks ; Funktsiooni f nimetatakse __________ hulgal X, kui leidub positiivne arv M > 0, nii et |f(x)| ≤ M iga x ∈ X korral.
+diferentseerimiseks ; Funktsiooni f tuletise leidmist nimetatakse funktsiooni f __________.
+maksimaalne väärtus ; Olgu funktsioon f määratud hulgal D. Me ütleme, et funktsioonil f leidub __________ hulgal D, punktis c ∈ D, kui f(x) ≤ f(c) iga x ∈ D.
+minimaalne väärtus ; Olgu funktsioon f määratud hulgal D. Me ütleme, et funktsioonil f leidub __________ hulgal D, punktis c ∈ D, kui f(x) ≥ f(c) iga x ∈ D.
