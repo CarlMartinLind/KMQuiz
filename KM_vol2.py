@@ -2,6 +2,9 @@ from random import randint, sample, shuffle
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
+from ttkthemes import ThemedTk
+import time
+from threading import Timer
 
 
 def failist_sõnastik(failinimi):
@@ -15,7 +18,9 @@ def failist_sõnastik(failinimi):
 
 def küsi_küsimus(sõnastik):
     testiaken = tk.Toplevel(aken)
-    testiaken.title('Test')
+    testiaken.title('Kõrgema Matemaatika kordamistest')
+
+    
 
 #    siin saab järjendi (vastusevariandid), kus on 4 vastusevarianti, millest kolm on valed ja üks õige. 
     võtmed = []
@@ -51,7 +56,9 @@ def küsi_küsimus(sõnastik):
     ttk.Radiobutton(testiaken, text=vastusevariandid[1], variable=v, value=vastusevariandid[1], command=lambda: vastuse_kontroll(vastusevariandid[1], võtmed[õige])).pack()
     ttk.Radiobutton(testiaken, text=vastusevariandid[2], variable=v, value=vastusevariandid[2], command=lambda: vastuse_kontroll(vastusevariandid[2], võtmed[õige])).pack()
     ttk.Radiobutton(testiaken, text=vastusevariandid[3], variable=v, value=vastusevariandid[3], command=lambda: vastuse_kontroll(vastusevariandid[3], võtmed[õige])).pack()
-
+    
+    def kaota_tagasiside(labelName):
+        labelName.destroy() 
     def uus_küsimus():
         testiaken.destroy()
         küsi_küsimus(failist_sõnastik(failinimi))
@@ -62,22 +69,27 @@ def küsi_küsimus(sõnastik):
         else:
             tagasiside = Label(testiaken, text='Peaaegu!!! Aga siiski mitte...')
             tagasiside.pack()
-        edasi = Button(testiaken, text='Järgmine küsimus', command=lambda: uus_küsimus())
-        edasi.pack()
-        lõpeta = Button(testiaken, text='Aitab sellest testist', command=lambda: testiaken.destroy())
-        lõpeta.pack()
-    
-aken = Tk()
-aken.title('KM testid')
+            t = Timer(8.0, kaota_tagasiside, args=(tagasiside,))
+            t.start()
+        
+            
+            
+        edasi = ttk.Button(testiaken, text='Järgmine küsimus', style="danger.TButton", command=lambda: uus_küsimus()).pack()
+        lõpeta = ttk.Button(testiaken, text='Katkesta test', style="danger.TButton", command=lambda: testiaken.destroy()).pack()   
+aken = ThemedTk(theme="radiance")
+aken.title('Kõrgem Matemaatika I')
 aken.geometry('300x200')
 
-silt1 = Label(aken, text='Vali küsimuste kategooria')
-silt1.pack()
+style = ttk.Style()
+style.configure('winnative',font="arial 11")
 
-valik1 = Button(aken, text='Teoreemid', command=lambda: küsi_küsimus(failist_sõnastik('teoreemid.txt')))
-valik1.pack()
-valik2 = Button(aken, text='Definitsioonid', command=lambda: küsi_küsimus(failist_sõnastik('definitsioonid.txt')))
-valik2.pack()
+
+silt1 = ttk.Label(aken, text='Vali küsimuste kategooria',font="arial 14").pack()
+
+valik1= ttk.Button(aken, text='Teoreemid', style="danger.TButton", command=lambda: küsi_küsimus(failist_sõnastik('teoreemid.txt'))).pack()
+#ttk.Button(aken, text="Styled Dangerously",style="danger.TButton").pack()
+#style.map("new_state_new_stye.TButton",foreground=[("pressed","red"),("active","blue")])
+valik2 = ttk.Button(aken, text='Definitsioonid', style="danger.TButton", command=lambda: küsi_küsimus(failist_sõnastik('definitsioonid.txt'))).pack()
 
 def lopp1():
     aken.destroy()
@@ -85,10 +97,8 @@ def lopp1():
 def lopp2():
     silt3 = Label(aken, text='Aitäh, et küsimustele vastasid! Edu!')
     silt3.pack()
-    sulge = Button(aken, text='Sulge programm', command=lambda: lopp1())
-    sulge.pack()
+    sulge = ttk.Button(aken, text='Sulge programm', style="danger.TButton", command=lambda: lopp1()).pack()
     
-lõpp = Button(aken, text='Lõpeta', command=lambda: lopp2())
-lõpp.pack()
+lõpp = ttk.Button(aken, text='Lõpeta', style="danger.TButton", command=lambda: lopp2()).pack()
 
 aken.mainloop()
