@@ -37,7 +37,7 @@ def ava_küsimuste_aken(failinimi):
     
 # see funktsioon peaks suunama küsimuse küsimuste aknasse eraldi labeli sisse
     def küsi_küsimus(sõnastik, skoor = 0, kordi = 0):        
-        if kordi == 1:
+        if kordi == 10:
             küsimuste_aken.destroy()
             
             tagasisideaken = tk.Toplevel(aken)
