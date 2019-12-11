@@ -4,3 +4,10 @@ Lagrange’i keskväärtusteoreem ; Kui funktsioon f on pidev lõigus [a, b] ja 
 Piirväärtuse ühesus ; Vaadeldavas protsessis saab funktsioonil olla ainult üks piirväärtus.
 Teoreem vahepealsetest väärtustest ; Kui funktsioon f on pidev lõigus [a, b], siis f(x) väärtus võib omada iga väärtust arvude f(a) ja f(b) vahel. Täpsemalt, kui f(a) ≤ y0 ≤ f(b), siis leidub argument x0 ∈ [a, b], et kehtib võrdus f(x0) = y0.
 Kronecker-Capelli teoreem ; Lineaarvõrrandisüsteem kujul Ax = b, on lahenduv (s.t omab vähemalt ühte lahendit) siis ja ainult siis, kui süsteemi maatriksi A astak r(A) võrdub laiendatud maatriksi L = (A | b) astakuga r(L). Teisiti öeldes, lineaarvõrrandisüsteem on lahenduv parajasti siis, kui r(A) = r(L).
+L’Hospital’i reegel ; Kui mingis protsessis lim f(x) = lim g(x) = 0 või lim |f(x)| = lim |g(x)| = ∞ ja eksisteerib (lõplik või lõpmatu) piirväärtus lim f'(x)/g'(x) = L, siis selles protsessis kehtib võrdus lim f(x)/g(x) = L.
+Algebra põhiteoreem ; Igal n-nda astme algebralisel võrrandil on kompleksarvude hulgas n lahendit (kui lugeda kordsed (võrdsed) lahendid erinevaks).
+Cantor–Bernsteini teoreem ; Kui hulga A võimsus ei uleta hulga B võimsust ja hulga B võimsus ei uleta hulga A võimsust, siis hulgad A ja B on sama võimsusega.
+Cantori teoreem ; Iga hulga A kõigi osahulkade hulga P(A) võimsus on suurem kui hulga A võimsus, s.t |A| < |P(A)|.
+Aritmeetika põhiteoreem ; Iga naturaalarvu n > 1 saab esitada algarvude korrutisena (st leiduvad r ∈ N ja algarvud p1,..., pr nii, et n = p1 ····· pr) ning see esitus on ühene tegurite järjekorra täpsuseni.
+Zermelo teoreem ; Mis tahes mittetühja hulka on võimalik täielikult järjestada.
+Tarski teoreem ; Mis tahes lõpmatu hulga A korral |A × A| = |A|.

@@ -7,3 +7,24 @@ tõkestatuks ; Funktsiooni f nimetatakse __________ hulgal X, kui leidub positii
 diferentseerimiseks ; Funktsiooni f tuletise leidmist nimetatakse funktsiooni f __________.
 maksimaalne väärtus ; Olgu funktsioon f määratud hulgal D. Me ütleme, et funktsioonil f leidub __________ hulgal D, punktis c ∈ D, kui f(x) ≤ f(c) iga x ∈ D.
 minimaalne väärtus ; Olgu funktsioon f määratud hulgal D. Me ütleme, et funktsioonil f leidub __________ hulgal D, punktis c ∈ D, kui f(x) ≥ f(c) iga x ∈ D.
+seotud vektoriks ; Lõiku, millel on fikseeritud alguspunkt, s.t. suund, nimetatakse suunatud lõiguks ehk __________.
+skalaarkorrutiseks ; Vektorite __________ nimetatakse reaalarvu, mis võrdub nende vektorite pikkuste ja nendevahelise nurga koosinuse korrutisega.
+üldvõrrandiks ; Võrrandit π : Ax + By + Cz + D = 0 nimetatakse tasandi π __________.
+ristlõigu pikkust ; Punkti P kauguseks sirgeni s nimetame sellest punktist sirgeni tõmmatud __________ ja tähistame seda d(P, s) abil.
+tasandile projekteeritud ; Sirge l ja tasandi π vaheliseks nurgaks nimetatakse sirge l ja __________ sirge l' vahelist nurka.
+kompleksarvuks ; __________ nimetatakse avaldist z = a + b i, kus a ja b on reaalarvud ning i on imaginaarühik.
+puhtimaginaararvuks ; Kui kompleksarvu z = a + bi reaalosa on null, so kui a = 0, siis kompleksarvu kujul z = b i nimetatakse __________.
+algebraliseks ; Kompleksarvu z esitusviisi z = a+b i, kus a, b ∈ R, nimetatakse kompleksarvu z __________ kujuks.
+trigonomeetriliseks ; Avaldist z = r (cos ϕ + i sin ϕ) nimetatakse kompleksarvu z __________ kujuks, kus reaalarv r on kompleksarvu z moodul |z|, reaalarv ϕ on kompleksarvu z argument, mida tähistatakse ϕ = arg z.
+reaalarvude ; Kõik ratsionaal- ja irratsionaalarvud moodustavad __________ hulga.
+nullmaatriksiks ; __________ nimetatakse maatriksit, mille kõik elemendid võrduvad nulliga.
+kõversektoriks ; Läbigu nullpunkti kaks sirget, mis moodustavad x-telje positiivse suunaga vastavalt nurgad α ja β. __________ nimetatakse tasandilist kujundit, mis on piiratud nimetatud sirgetega ning lisaks pideva mittenegatiivse funktsiooni r = f(θ) graafikuga, kus θ on nurk radiaanides.
+kõvertrapetsiks ; Olgu funktsioon f pidev lõigus [a, b]. Siis __________ nimetatakse joonega y = f(x), x-teljega ning püstsirgetega x = a ja x = b piiratud kujundit.
+integreeruv ; Kui funktsioonil f leidub Riemann’i integraal, siis öeldakse, et funktsioon on __________ (Riemann’i mõttes).
+normiks ; Lõigu alajaotuse __________ nimetatakse valitud alajaotuse suurimat osalõigu pikkust.
+eraldatud muutujatega ; Esimest järku diferentsiaalvõrrandit nimetatakse __________ diferentsiaalvõrrandiks, kui selle saab tundmatu y = y(x) suhtes kirjutada kujul g(y)dy = f(x)dx.
+funktsioon y = y(x) ; Esimest järku diferentsiaalvõrrandiks nimetakse diferentsiaalvõrrandit kujul y' = f(x, y), kus otsitavaks on __________.
+harilikuks ; _________ diferentsiaalvõrrandiks nimetatakse diferentsiaalvõrrandit, kus otsitav funktsioon on ühe muutuja funktsioon.
+lihtmurruks ; Kui polünoomi f(x) aste on väiksem polünoomi g(x) astmest, siis ratsionaalset funktsiooni f(x)/g(x) nimetatakse __________.
+määramata integraaliks ; Funktsiooni f kõikide algfunktsioonide üldavaldist F(x) + C nimetatakse funktsiooni f __________. Siin F on funktsiooni f mingi algfunktsioon ja C ∈ R on suvaline konstant.
+käänupunktiks ; Olgu funktsioon f punktis c pidev. Siis joone y = f(x) punkti (c, f(c)), milles joone kumerus läheb üle nõgususeks (või vastupidi), nimetatakse selle joone __________.
