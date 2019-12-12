@@ -26,15 +26,18 @@ def ava_küsimuste_aken(failinimi):
     küsimuste_raam.pack()
     
     nupu_raam = Frame(küsimuste_aken)
-    nupu_raam.pack()
+    nupu_raam.pack(pady=20)
     
-    küsimustepagas = failist_sõnastik(failinimi)
-    alusta = ttk.Button(nupu_raam, text='Alusta', style="danger.TButton", command=lambda: eemalda_nupp()).pack()
+    juhendi_silt = Label(nupu_raam, text = 'Test koosneb kümnest küsimusest. Alustamiseks vajuta nupule "Alusta".')
+    juhendi_silt.pack()
+    
+    alusta = ttk.Button(nupu_raam, text='Alusta', style="danger.TButton", command=lambda: eemalda_nupp()).pack(pady=10)
     
     def eemalda_nupp():
         nupu_raam.destroy()
         küsi_küsimus(küsimustepagas)
     
+    küsimustepagas = failist_sõnastik(failinimi)
 # see funktsioon peaks suunama küsimuse küsimuste aknasse eraldi labeli sisse
     def küsi_küsimus(sõnastik, skoor = 0, kordi = 0):        
         if kordi == 10:
@@ -45,7 +48,7 @@ def ava_küsimuste_aken(failinimi):
             tagasisideaken.geometry('400x100')
         
             tagasisideraam = Frame(tagasisideaken)
-            tagasisideraam.pack()
+            tagasisideraam.pack(pady=20)
         
             if skoor > 8:
                 tekst = 'Kogusid ' + str(skoor) + ' punkti kümnest võimalikust. Suurepärane tulemus!'
@@ -90,7 +93,7 @@ def ava_küsimuste_aken(failinimi):
                 sõna = 'teoreemiga'
 
 #     testiaknasse Label, kuhu tuleb küsimus
-            silt2 = Label(küsimuste_raam, text = str(kordi + 1) + '. Millise ' + sõna + ' on tegu?\n' + sõnastik[võtmed[õige]], wraplength=480)
+            silt2 = Label(küsimuste_raam, text = str(kordi + 1) + '. Millise ' + sõna + ' on tegu?\n' + sõnastik[võtmed[õige]], wraplength=480, justify='center')
             silt2.pack()
             
 
@@ -98,14 +101,14 @@ def ava_küsimuste_aken(failinimi):
             vastuste_raam = Frame(küsimuste_raam)
             vastuste_raam.pack()
             
-            valikusilt = Label(vastuste_raam)
-            valikusilt.pack()
+            valikusilt = Label(vastuste_raam, justify = 'left')
+            valikusilt.pack(padx=10, pady=10)
             
             v = StringVar()
-            ttk.Radiobutton(valikusilt, text=vastusevariandid[0], variable=v, value=vastusevariandid[0], command=lambda: vastuse_kontroll(vastusevariandid[0], võtmed[õige], skoor)).pack()
-            ttk.Radiobutton(valikusilt, text=vastusevariandid[1], variable=v, value=vastusevariandid[1], command=lambda: vastuse_kontroll(vastusevariandid[1], võtmed[õige], skoor)).pack()
-            ttk.Radiobutton(valikusilt, text=vastusevariandid[2], variable=v, value=vastusevariandid[2], command=lambda: vastuse_kontroll(vastusevariandid[2], võtmed[õige], skoor)).pack()
-            ttk.Radiobutton(valikusilt, text=vastusevariandid[3], variable=v, value=vastusevariandid[3], command=lambda: vastuse_kontroll(vastusevariandid[3], võtmed[õige], skoor)).pack()
+            ttk.Radiobutton(valikusilt, text=vastusevariandid[0], variable=v, value=vastusevariandid[0], command=lambda: vastuse_kontroll(vastusevariandid[0], võtmed[õige], skoor)).pack(anchor=W)
+            ttk.Radiobutton(valikusilt, text=vastusevariandid[1], variable=v, value=vastusevariandid[1], command=lambda: vastuse_kontroll(vastusevariandid[1], võtmed[õige], skoor)).pack(anchor=W)
+            ttk.Radiobutton(valikusilt, text=vastusevariandid[2], variable=v, value=vastusevariandid[2], command=lambda: vastuse_kontroll(vastusevariandid[2], võtmed[õige], skoor)).pack(anchor=W)
+            ttk.Radiobutton(valikusilt, text=vastusevariandid[3], variable=v, value=vastusevariandid[3], command=lambda: vastuse_kontroll(vastusevariandid[3], võtmed[õige], skoor)).pack(anchor=W)
         
         
             def uus_küsimus(väärtus):
@@ -132,17 +135,22 @@ def ava_küsimuste_aken(failinimi):
                     väärtus = 'vale'
                     tagasiside = Label(küsimuste_raam, text='Peaaegu!!! Aga siiski mitte... Punkte hetkel: ' + str(skoor))
                     tagasiside.pack()
-           
-                edasi = ttk.Button(küsimuste_raam, text='Järgmine küsimus', style="danger.TButton", command=lambda: uus_küsimus(väärtus)).pack()
-                lõpeta = ttk.Button(küsimuste_raam, text='Katkesta test', style="danger.TButton", command=lambda: küsimuste_aken.destroy()).pack()   
+                
+                if kordi == 9:
+                    edasi_nupu_tekst = 'Lõpeta'
+                else:
+                    edasi_nupu_tekst = 'Järgmine küsimus'
+                
+                edasi = ttk.Button(küsimuste_raam, text = edasi_nupu_tekst, style="danger.TButton", command=lambda: uus_küsimus(väärtus)).pack()
+                lõpeta = ttk.Button(küsimuste_raam, text = 'Katkesta test', style="danger.TButton", command=lambda: küsimuste_aken.destroy()).pack()   
 
 
 aken = ThemedTk(theme="radiance")
 aken.title('Kõrgem Matemaatika I')
-aken.geometry('300x200')
+aken.geometry('340x200')
 
 style = ttk.Style()
-style.configure('winnative',font="arial 11")
+style.configure('winnative', font="arial 11")
 
 
 silt1 = ttk.Label(aken, text='Vali küsimuste kategooria', font="arial 14").pack()
@@ -155,7 +163,7 @@ def lopp1():
     aken.destroy()
 
 def lopp2():
-    silt3 = Label(aken, text='Aitäh, et küsimustele vastasid! Edu!')
+    silt3 = Label(aken, text='Aitäh, et küsimustele vastasid! Edukat eksamit!')
     silt3.pack()
     sulge = ttk.Button(aken, text='Sulge programm', style="danger.TButton", command=lambda: lopp1()).pack()
     
