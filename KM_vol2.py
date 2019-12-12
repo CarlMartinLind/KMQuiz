@@ -38,7 +38,7 @@ def ava_küsimuste_aken(failinimi):
         küsi_küsimus(küsimustepagas)
     
     küsimustepagas = failist_sõnastik(failinimi)
-# see funktsioon peaks suunama küsimuse küsimuste aknasse eraldi labeli sisse
+# see funktsioon suunab küsimuse küsimuste aknasse eraldi sildi sisse
     def küsi_küsimus(sõnastik, skoor = 0, kordi = 0):        
         if kordi == 10:
             küsimuste_aken.destroy()
@@ -65,7 +65,7 @@ def ava_küsimuste_aken(failinimi):
             def sulge_aken():
                 tagasisideaken.destroy()
             
-            t = Timer(7.0, sulge_aken)
+            t = Timer(8.0, sulge_aken)
             t.start()
         
         else:
@@ -86,7 +86,7 @@ def ava_küsimuste_aken(failinimi):
                 vastusevariandid.append(koopia[valed[i]])
             shuffle(vastusevariandid)
 
-#     sõna on vaja silt2 loomisel ja failinime, kui peaks küsimuste kategooriat vahetatama (funktsioonis uus_küsimus())
+#     sõna on vaja silt2 loomisel
             if 'astakuks ' in võtmed:
                 küsimus = 'Mis sobib lünka?'
             else:
@@ -129,12 +129,12 @@ def ava_küsimuste_aken(failinimi):
                 if valik == õige_vastus:
                     väärtus = 'õige'
                     skoor += 1
-                    tagasiside = Label(küsimuste_raam, text='Suurepärane! Õige vastus! Punkte hetkel: ' + str(skoor))
+                    tagasiside = Label(küsimuste_raam, text='Suurepärane! Õige vastus! Punkte kokku: ' + str(skoor))
                     tagasiside.configure(bg="#4eed5e")
                     tagasiside.pack()
                 else:
                     väärtus = 'vale'
-                    tagasiside = Label(küsimuste_raam, text='Peaaegu!!! Aga siiski mitte... Punkte hetkel: ' + str(skoor))
+                    tagasiside = Label(küsimuste_raam, text='Peaaegu!!! Aga siiski mitte... Punkte kokku: ' + str(skoor))
                     tagasiside.configure(bg="#ed8a72")
                     tagasiside.pack()
                 
@@ -160,11 +160,12 @@ silt1 = ttk.Label(aken, text='Vali küsimuste kategooria', font="arial 14").pack
 valik1= ttk.Button(aken, text='Teoreemid', style="danger.TButton", command=lambda: ava_küsimuste_aken('teoreemid.txt')).pack()
 valik2 = ttk.Button(aken, text='Definitsioonid', style="danger.TButton", command=lambda: ava_küsimuste_aken('definitsioonid.txt')).pack(pady=2)
 
-
 def lopp1():
     aken.destroy()
 
 def lopp2():
+    for child in aken.winfo_children():
+        child['state'] = 'disabled'
     silt3 = Label(aken, text='Aitäh, et küsimustele vastasid! Edukat eksamit!')
     silt3.pack()
     sulge = ttk.Button(aken, text='Sulge programm', style="danger.TButton", command=lambda: lopp1()).pack(pady=5)
@@ -172,3 +173,7 @@ def lopp2():
 lõpp = ttk.Button(aken, text='Lõpeta', style="danger.TButton", command=lambda: lopp2()).pack()
 
 aken.mainloop()
+
+# Allikad teoreemide ja definitsioonide jaoks:
+# Kõrgem matemaatika I 2019/2020 õa, loengukonspekt, Marek Kolk, täiendanud Annely Mürk
+# Matemaatiline maailmapilt 2019/2020 sügis, Terje Hõim, Johann Langemets
