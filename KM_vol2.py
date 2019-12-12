@@ -130,10 +130,12 @@ def ava_küsimuste_aken(failinimi):
                     väärtus = 'õige'
                     skoor += 1
                     tagasiside = Label(küsimuste_raam, text='Suurepärane! Õige vastus! Punkte hetkel: ' + str(skoor))
+                    tagasiside.configure(bg="#2eff43")
                     tagasiside.pack()
                 else:
                     väärtus = 'vale'
                     tagasiside = Label(küsimuste_raam, text='Peaaegu!!! Aga siiski mitte... Punkte hetkel: ' + str(skoor))
+                    tagasiside.configure(bg="#ed8a72")
                     tagasiside.pack()
                 
                 if kordi == 9:
