@@ -130,7 +130,7 @@ def ava_küsimuste_aken(failinimi):
                     väärtus = 'õige'
                     skoor += 1
                     tagasiside = Label(küsimuste_raam, text='Suurepärane! Õige vastus! Punkte hetkel: ' + str(skoor))
-                    tagasiside.configure(bg="#2eff43")
+                    tagasiside.configure(bg="#4eed5e")
                     tagasiside.pack()
                 else:
                     väärtus = 'vale'
